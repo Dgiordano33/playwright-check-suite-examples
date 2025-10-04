@@ -1,18 +1,4 @@
 import { defineConfig } from 'checkly'
-import { PlaywrightCheck } from 'checkly/constructs'
-
-
-
-  // Playwright Check Suite configuration
-  new PlaywrightCheck('checkly-test-project-playwright-suite', {
-    name: 'checkly-test-project - Playwright Test Suite',
-    playwrightConfigPath: './playwright.config.ts',
-    
-    locations: ["us-east-1","eu-west-1"],
-    frequency: 5,
-    tags: ['playwright', 'auto-generated'],
-  })
-  
 
 export default defineConfig({
   projectName: 'checkly-test-project',
@@ -25,7 +11,8 @@ export default defineConfig({
     frequency: 5,
     locations: ["us-east-1","eu-west-1"],
     tags: ['auto-generated'],
-    // Playwright tests detected - using PlaywrightCheck construct above
+    checkMatch: '**/__checks__/*.check.ts',
+    // Playwright tests will be loaded from __checks__/playwright.check.ts
     
   },
   cli: {
