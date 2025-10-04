@@ -9,8 +9,6 @@ new PlaywrightCheck('checkly-test-project-playwright-suite', {
   locations: ["us-east-1","eu-west-1"],
   tags: ['playwright', 'auto-generated'],
 
-  // Reference your Playwright configuration
-  code: {
-    entrypoint: './playwright.config.ts',
-  },
+  // Reference your Playwright configuration file
+  playwrightConfigPath: './playwright.config.ts',
 })
